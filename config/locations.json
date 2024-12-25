@@ -1,0 +1,34 @@
+{
+  "locations": [
+    {
+      "name": "Niš"
+    },
+    {
+      "name": "Novi Sad"
+    },
+    {
+      "name": "Belgrade"
+    },
+    {
+      "name": "Kragujevac"
+    },
+    {
+      "name": "Subotica"
+    },
+    {
+      "name": "Uzice"
+    },
+    {
+      "name": "Vranje"
+    },
+    {
+      "name": "Zrenjanin"
+    },
+    {
+      "name": "Novi Pazar"
+    },
+    {
+      "name": "Zajecar"
+    }
+  ]
+}

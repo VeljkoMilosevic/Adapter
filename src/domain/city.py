@@ -24,4 +24,3 @@ class City:
             "latitude": self.latitude,
             "longitude": self.longitude
          }
-

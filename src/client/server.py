@@ -15,22 +15,20 @@ class Server:
     def set_adapter(self, adapter: JSONAdapter):
         self.adapter = adapter
 
-    def show_temperature(self):
+    def show_temperatures(self):
         all_location = self.adapter.get_temperatures_json()
         self.create_map(all_location)
         self.start_server()
 
-
     def create_map(self, all_locations):
-            map_serbia = folium.Map(location=[44.0, 20.0], zoom_start=7)
-            all_locations = json.loads(all_locations["locations"])
-            for location in all_locations:
-                name = location['name']
-                coords = [location['latitude'],location['longitude']]
-                print(coords)
-                temperature = location['current_temperature']
-                folium.Marker(
-                location=coords,
+        map_serbia = folium.Map(location=[44.0, 20.0], zoom_start=7)
+        all_locations = json.loads(all_locations["locations"])
+        for location in all_locations:
+            name = location['name']
+            coordination = [location['latitude'], location['longitude']]
+            temperature = location['current_temperature']
+            folium.Marker(
+                location=coordination,
                 popup=f'{temperature}. {name}',
                 icon=folium.DivIcon(html=f'''
                     <div style="width: 30px; height: 30px; background-color: lightblue; 
@@ -40,9 +38,9 @@ class Server:
                 {temperature}
                 </div>
                 ''')
-                ).add_to(map_serbia)
+            ).add_to(map_serbia)
 
-            map_serbia.save("../../build/index.html")
+        map_serbia.save("index.html")
 
     def start_server(self):
         handler = http.server.SimpleHTTPRequestHandler

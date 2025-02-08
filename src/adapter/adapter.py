@@ -11,6 +11,7 @@ class JSONAdapter:
     def set_weather_api(self, weather_api: WeatherApi):
         self.weather_api = weather_api
 
+    # transforms data in yaml format from weather_api.get_current_temperatures to json format
     def get_temperatures_json(self):
         current_temperatures = self.weather_api.get_current_temperatures()
         json_data = json.dumps(yaml.safe_load(current_temperatures), indent=4)
